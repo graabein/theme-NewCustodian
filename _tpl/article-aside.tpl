@@ -6,7 +6,7 @@
 {{ foreach $gimme->article->slideshows as $slideshow }}
 
           <div id="gallery" class="clearfix">
-              <h3>{{ #articleGallery# }}</h3>
+              <h3>{{ 'articleGallery'|translate }}</h3>
               <h4>{{ $slideshow->headline }}</h4>
 {{ assign var="counter" value=0 }}              
 {{ foreach $slideshow->items as $item }}      
@@ -20,7 +20,7 @@
 {{* this creates article map with markers for selected POIs *}}        
 {{ if $gimme->article->has_map }}         
             <figure id="map-box">
-                <h3>{{ #map# }}</h3>
+                <h3>{{ 'map'|translate }}</h3>
                 {{ map show_locations_list="false" show_reset_link="Show initial Map" width="350" height="300" }}
             </figure>  
 {{ /if }}
@@ -33,17 +33,17 @@
 {{ list_article_attachments }}
 {{ if $gimme->attachment->extension == oga || $gimme->attachment->extension == mp3 || $gimme->attachment->extension == MP3  }}          
 <div class="audio-attachment">
-  <h3> {{ #listen# }}</h3>
+  <h3> {{ 'listen'|translate }}</h3>
     <audio src="{{ uri options="articleattachment" }}" controls></audio><br>
-    <a class="btn btn-mini btn-red" href="{{ uri options="articleattachment" }}">{{ #downloadAudioFile# }} | {{ $gimme->attachment->extension }}</a>
+    <a class="btn btn-mini btn-red" href="{{ uri options="articleattachment" }}">{{ 'downloadAudioFile'|translate }} | {{ $gimme->attachment->extension }}</a>
 </div><!-- /#audio-attachment -->
 {{ elseif $gimme->attachment->extension == ogv || $gimme->attachment->extension == ogg || $gimme->attachment->extension == flv || $gimme->attachment->extension == mp4 || $gimme->attachment->extension == webm }}             
     {{append var=videosources value="{{ uri options="articleattachment" }}" index="`$gimme->attachment->extension`"}}
     {{assign var = hasvideo value = true}}
 {{ else }}
 <div class="attachment">
-    <h5><i class="icon-download-alt"></i> {{ #attachment# }}</h5><hr>
-    <a href="{{ uri options="articleattachment" }}" class="btn btn-mini btn-red">{{ #download# }} | {{ $gimme->attachment->file_name }} ({{ $gimme->attachment->size_kb }}kb)</a>
+    <h5><i class="icon-download-alt"></i> {{ 'attachment'|translate }}</h5><hr>
+    <a href="{{ uri options="articleattachment" }}" class="btn btn-mini btn-red">{{ 'download'|translate }} | {{ $gimme->attachment->file_name }} ({{ $gimme->attachment->size_kb }}kb)</a>
     <p><em>{{ $gimme->attachment->description }}</em></p>
 </div><!-- /.attachment -->
 {{ /if }}
@@ -53,7 +53,7 @@
 
 {{ if $hasvideo == true }}
 <div class="video-attachment"><!-- read http://diveintohtml5.org/video.html -->
-  <h3> {{ #watch# }}</h3>
+  <h3> {{ 'watch'|translate }}</h3>
     <div class="flowplayer" data-engine="flash" data-swf="{{ url static_file='_js/vendor/flowplayer/flowplayer.swf' }}" data-ratio="0.417">
       <video >
         {{foreach from=$videosources key=extension item=videoSource name=videoLoop}}
@@ -62,7 +62,7 @@
       </video>
     </div>
     {{foreach from=$videosources key=extension item=videoSource name=videoLoop}}
-    <a href="{{ $videoSource }}" class="btn btn-mini btn-red">{{ #download# }} | {{ $extension }}</a>
+    <a href="{{ $videoSource }}" class="btn btn-mini btn-red">{{ 'download'|translate }} | {{ $extension }}</a>
     {{/foreach}}
 </div><!-- /#video-attachment --> 
 {{ /if }}
@@ -86,7 +86,7 @@
 {{ list_article_authors }} 
 {{ if $gimme->current_list->at_beginning }}            
             <div id="author-box">
-              <h3>{{ #aboutAuthor# }}</h3>
+              <h3>{{ 'aboutAuthor'|translate }}</h3>
 {{ /if }}              
                 <article class="clearfix">
                
@@ -120,7 +120,7 @@
             
 {{ list_related_articles }}
 {{ if $gimme->current_list->at_beginning }}
-                <h3>{{ #relatedArticles# }}</h3>
+                <h3>{{ 'relatedArticles'|translate }}</h3>
         			 <ul>
 {{ /if }}        			 
                     <li><a href="{{ uri options="article" }}">{{ $gimme->article->name }}</a></li>
@@ -130,7 +130,7 @@
 {{ /list_related_articles }}                                               
             
             
-                <h3>{{ #moreInThisSection# }}</h3>
+                <h3>{{ 'moreInThisSection'|translate }}</h3>
         <ul>
 {{ assign var="curart" value=$gimme->article->number }}        
 {{ list_articles length="5" ignore_issue="true" order="bypublishdate desc" constraints="number not $curart" }}
