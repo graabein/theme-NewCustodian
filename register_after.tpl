@@ -1,16 +1,16 @@
 {{extends file="layout.tpl"}}
 
-{{block title}}{{ #registerYourself# }}{{/block}}
+{{block title}}{{ 'registerYourself'|translate }}{{/block}}
 
 {{block content}}
 
 {{ assign var="userindex" value=1 }}
 
-<h3>{{ #confirmationSent# }}</h3>
+<h3>{{ 'confirmationSent'|translate }}</h3>
 
 <div class="alert alert-info">
-    <p>{{ #followEmailSteps# }}</p>
-    <p>{{ #thanksForRegistering# }}</p>
+    <p>{{ 'followEmailSteps'|translate }}</p>
+    <p>{{ 'thanksForRegistering'|translate }}</p>
 </div>
 
 {{/block}}
