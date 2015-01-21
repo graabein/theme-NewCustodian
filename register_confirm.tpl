@@ -1,12 +1,12 @@
 {{extends file="layout.tpl"}}
 
-{{block title}}{{ #registerConfirm# }}{{/block}}
+{{block title}}{{ 'registerConfirm'|translate }}{{/block}}
 
 {{block content}}
 
 {{ assign var="userindex" value=1 }}
 
-<h3>{{ #pleaseFill# }}</h3>
+<h3>{{ 'pleaseFill'|translate }}</h3>
 <fieldset class="background-block">
 {{ $form }}
 
