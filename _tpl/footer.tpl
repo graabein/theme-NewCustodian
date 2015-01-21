@@ -4,7 +4,7 @@
           {{ list_sections }}       
           <li><a href="{{ url options="section" }}" title="{{ $gimme->section->name }}">{{ $gimme->section->name }}</a></li>
           {{ /list_sections }}      
-          <li><a href="{{ $view->url(['controller' => 'user', 'action' => 'index'], 'default') }}" title="Community index">{{ #community# }}</a></li>
+          <li><a href="{{ $view->url(['controller' => 'user', 'action' => 'index'], 'default') }}" title="Community index">{{ 'community'|translate }}</a></li>
       </ul>
       <ul class="clearfix sec-nav">
       	 {{ local }}
@@ -13,11 +13,11 @@
           <li><a href="{{ uri options="article" }}" title="{{ $gimme->article->name }}">{{ $gimme->article->name }}</a></li>
           {{ /list_articles }}
                    
-          <li><a href="{{ uri options="template archive.tpl" }}">{{ #archives# }}</a></li>
+          <li><a href="{{ uri options="template archive.tpl" }}">{{ 'archives'|translate }}</a></li>
 
-          <li><a href="#" class="show-feedback-form">Show Feedback</a></li>
+          <li><a href="#" class="show-feedback-form">{{ 'Show Feedback'|translate }}</a></li>
       </ul>      
-    <p>Powered by <a href="http://newscoop.sourcefabric.org/">Newscoop</a>. {{ #designedBy# }} <a href="http://www.sourcefabric.org/">Sourcefabric</a>. {{ #lastUpdate# }} {{ list_articles length="1" ignore_issue="true" ignore_section="true"  order="bypublishdate desc" }}{{ $gimme->article->modify_date|camp_date_format:"%M %y, %Y" }}{{ /list_articles }}</p>
+    <p>{{ 'Powered by'|translate }} <a href="http://newscoop.sourcefabric.org/">{{ 'Newscoop'|translate }}</a>. {{ 'designedBy'|translate }} <a href="http://www.sourcefabric.org/">{{ 'Sourcefabric'|translate }}</a>. {{ 'lastUpdate'|translate }} {{ list_articles length="1" ignore_issue="true" ignore_section="true"  order="bypublishdate desc" }}{{ $gimme->article->modify_date|camp_date_format:"%M %y, %Y" }}{{ /list_articles }}</p>
 
     		 {{ /local }} 
     </footer>
@@ -28,11 +28,11 @@
       {{ if $gimme->user->logged_in }}
         <div class="popup-form">
         <form method="POST" id="feedback-form-form" action="/feedback/save">
-            <h2>Feedback</h2>
+            <h2>{{ 'Feedback'|translate }}</h2>
             <fieldset>
                 <ul>
                     <li>
-                    <label>Choose a topic</label>
+                    <label>{{ 'Chose a topic'|translate }}</label>
                         <select class="topic" style="min-width: 276px;">
                             <option value="First topic">First topic</option>
                             <option value="Second topic">Second topic</option>
@@ -60,8 +60,8 @@
         </form>
         </div>
     {{ else }}
-    <h2 style="text-align: center;">Only for logged in users</h2>
-    <p style="text-align: center; font-size: 15px; font-weight: bold; padding-top: 10px;">Login <a href="{{ $view->url(['controller' => 'auth', 'action' =>'index'], 'default') }}">here</a></p>
+    <h2 style="text-align: center;">{{ 'Only for logged in users'|translate }}</h2>
+    <p style="text-align: center; font-size: 15px; font-weight: bold; padding-top: 10px;">{{ 'Login'|translate }} <a href="{{ $view->url(['controller' => 'auth', 'action' =>'index'], 'default') }}">{{ 'here'|translate }}</a></p>
     {{ /if }}
     </div>
 </div>
