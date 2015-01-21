@@ -4,9 +4,9 @@
 
 {{ assign var="userindex" value=1 }}
 
-<h1>{{ #hello# }} {{ $name }}</h1>
+<h1>{{ 'hello'|translate }} {{ $name }}</h1>
 
-<p>{{ #fillYourData# }}</p>
+<p>{{ 'fillYourData'|translate }}</p>
 
 {{ if !empty($error) }}
 <p style="color: #c00;"><strong>{{ $error }}</strong></p>
