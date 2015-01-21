@@ -1,8 +1,8 @@
 <ul class="pagination">
     {{if isset($paginator->previous)}}
-    <li class="prev"><a href="{{ $view->url(['page' => $paginator->previous]) }}">{{ #previous# }}</a></li>
+    <li class="prev"><a href="{{ $view->url(['page' => $paginator->previous]) }}">{{ 'previous'|translate }}</a></li>
     {{else}}
-    <li class="prev"><span>{{ #previous# }}</span></li>
+    <li class="prev"><span>{{ 'previous'|translate }}</span></li>
     {{/if}}
 
     {{foreach $paginator->pagesInRange as $page}}
@@ -14,8 +14,8 @@
     {{/foreach}}
 
     {{if isset($paginator->next)}}
-    <li class="next"><a href="{{ $view->url(['page' => $paginator->next]) }}">{{ #next# }}</a></li>
+    <li class="next"><a href="{{ $view->url(['page' => $paginator->next]) }}">{{ 'next'|translate }}</a></li>
     {{else}}
-    <li class="next"><span>{{ #next# }}</span></li>
+    <li class="next"><span>{{ 'next'|translate }}</span></li>
     {{/if}}
 </ul>
