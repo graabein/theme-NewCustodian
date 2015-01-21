@@ -15,13 +15,13 @@ $(document).ready(function(){
   });
 });
 </script>
-<h3>{{ #dynamicMap# }}</h3>
+<h3>{{ 'dynamicMap'|translate }}</h3>
 <div class="eightcol">
 
 {{* All possible constraints for setting the map can seen here:
 https://wiki.sourcefabric.org/display/CS/Dynamic+maps+-+Constraints *}}
 {{ set_map
-    label="{{ #latestLocations# }}"
+    label="{{ 'latestLocations'|translate }}"
     issues="_current"
     max_points=5
 }}
@@ -48,7 +48,7 @@ https://wiki.sourcefabric.org/display/CS/Dynamic+maps+-+Display *}}
 and then to make a list of these five locations with max 3 belonging articles (those 
 that are geo-located to specific locations *}}
 <div class="fourcol last location-list">
-    <h4>{{ #articlesLatestLocations# }}</h4>
+    <h4>{{ 'articlesLatestLocations'|translate }}</h4>
     {{ list_map_locations }}
     {{ assign var="latitude" value=$gimme->location->latitude }}
     {{ assign var="longitude" value=$gimme->location->longitude }}
