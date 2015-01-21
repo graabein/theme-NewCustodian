@@ -1,11 +1,11 @@
       <section id="most">
         <div id="tabs">
           <ul>
-            <li><a href="#most-comm">{{ #recentlyCommented# }}</a></li>
-            <li><a href="#most-pop">{{ #mostRead# }}</a></li>
+            <li><a href="#most-comm">{{ 'recentlyCommented'|translate }}</a></li>
+            <li><a href="#most-pop">{{ 'mostRead'|translate }}</a></li>
           </ul>
           <section id="most-comm">
-                        <p><em>{{ #recentlyCommentedArticles# }}</em></p>
+                        <p><em>{{ 'recentlyCommentedArticles'|translate }}</em></p>
                         <ul>
 
 {{ local }}
@@ -15,7 +15,7 @@
                             <li>{{ list_article_comments length="1" order="bydate desc"}}<b>{{ if $gimme->comment->user->identifier }}
                 <a href="http://{{ $gimme->publication->site }}/user/profile/{{ $gimme->comment->user->uname|urlencode }}">{{ $gimme->comment->user->uname }}</a>
             {{ else }}
-                {{ $gimme->comment->nickname }} {{ #anonymous# }}
+                {{ $gimme->comment->nickname }} {{ 'anonymous'|translate }}
             {{ /if }}</b>{{ /list_article_comments }} on <a href="{{ uri options="article" }}#comments">{{ $gimme->article->name }}</a></li>
 
 {{ /list_articles }}
@@ -23,7 +23,7 @@
                         </ul> 
           </section><!-- /#most-comm -->
           <section id="most-pop">
-                        <p><em>{{ #mostOpenedArticles# }}</em></p>                    
+                        <p><em>{{ 'mostOpenedArticles'|translate }}</em></p>                    
                         <ul>
                         
 {{ set_current_issue }}
