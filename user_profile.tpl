@@ -7,13 +7,13 @@
 <!--{{ $user->uname }}
 <ul class="links">
     {{ if $user->logged_in }}
-    <li><a href="{{ $view->url(['controller' => 'dashboard', 'action' => 'index'], 'default') }}">{{ #editProfile# }}</a></li>
+    <li><a href="{{ $view->url(['controller' => 'dashboard', 'action' => 'index'], 'default') }}">{{ 'editProfile'|translate }}</a></li>
     {{ /if }}
 </ul>-->
 {{ if $user->isAuthor() }}
-  {{ #editorProfile# }}
+  {{ 'editorProfile'|translate }}
 {{ else }}
-  {{ #userProfile# }}
+  {{ 'userProfile'|translate }}
 {{ /if }}
 </h3>
 
@@ -29,7 +29,7 @@
   <h5>{{ $user->first_name }} {{ $user->last_name }}<i>{{ $user->uname }}</i>
     <ul class="links">
     {{ if $user->logged_in }}
-    <li><a href="{{ $view->url(['controller' => 'dashboard', 'action' => 'index'], 'default') }}">{{ #editProfile# }}</a></li>
+    <li><a href="{{ $view->url(['controller' => 'dashboard', 'action' => 'index'], 'default') }}">{{ 'editProfile'|translate }}</a></li>
     {{ /if }}
 </ul>
     </h5>
@@ -61,11 +61,11 @@
 <h5>{{ $user->first_name }} {{ $user->last_name }}<i>{{ $user->uname }}</i>
     <ul class="links">
         {{ if $user->logged_in }}
-        <li><a href="{{ $view->url(['controller' => 'dashboard', 'action' => 'index'], 'default') }}">{{ #editProfile# }}</a></li>
+        <li><a href="{{ $view->url(['controller' => 'dashboard', 'action' => 'index'], 'default') }}">{{ 'editProfile'|translate }}</a></li>
         {{ /if }}
     </ul>
 </h5>
-<p class="date">member from {{ $user->created }}<span class="posts">{{ #numberOfPosts# }} 
+<p class="date">member from {{ $user->created }}<span class="posts">{{ 'numberOfPosts'|translate }} 
 
 
 {{ list_articles length="10" order="byPublishDate desc" }}
