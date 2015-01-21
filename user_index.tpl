@@ -4,24 +4,24 @@
 
 {{ assign var="userindex" value=1 }}
 
-<h3>{{ #userIndex# }}</h3>
+<h3>{{ 'userIndex'|translate }}</h3>
 
 <div class="user-search">
     <form method="GET" action="{{ $view->url(['controller' => 'user', 'action' => 'search'], 'default', true) }}">
         <input type="text" name="q"></input>
-        <input type="submit" value="{{ #search1# }}"></input>
+        <input type="submit" value="{{ 'search1'|translate }}"></input>
     </form>
 </div>
 
 <ul id="filter-users" class="tabs simple-list filter">
-    <li><a href="{{ $view->url(['controller' => 'user', 'action' => 'index'], 'default', true) }}">{{ #active# }}</a></li>
-    <li><a href="{{ $view->url(['controller' => 'user', 'action' => 'filter', 'f' => 'a-z'], 'default', true) }}">{{ #all# }}</a></li>
+    <li><a href="{{ $view->url(['controller' => 'user', 'action' => 'index'], 'default', true) }}">{{ 'active'|translate }}</a></li>
+    <li><a href="{{ $view->url(['controller' => 'user', 'action' => 'filter', 'f' => 'a-z'], 'default', true) }}">{{ 'all'|translate }}</a></li>
     <li><a href="{{ $view->url(['controller' => 'user', 'action' => 'filter', 'f' => 'a-d'], 'default', true) }}">A-D</a></li>
     <li><a href="{{ $view->url(['controller' => 'user', 'action' => 'filter', 'f' => 'e-k'], 'default', true) }}">E-K</a></li>
     <li><a href="{{ $view->url(['controller' => 'user', 'action' => 'filter', 'f' => 'l-p'], 'default', true) }}">L-P</a></li>
     <li><a href="{{ $view->url(['controller' => 'user', 'action' => 'filter', 'f' => 'q-t'], 'default', true) }}">Q-T</a></li>
     <li><a href="{{ $view->url(['controller' => 'user', 'action' => 'filter', 'f' => 'u-z'], 'default', true) }}">U-Z</a></li>
-    <li><a href="{{ $view->url(['controller' => 'user', 'action' => 'editors'], 'default', true) }}">{{ #editors# }}</a></li>
+    <li><a href="{{ $view->url(['controller' => 'user', 'action' => 'editors'], 'default', true) }}">{{ 'editors'|translate }}</a></li>
 </ul>
 
 <ul class="users">
