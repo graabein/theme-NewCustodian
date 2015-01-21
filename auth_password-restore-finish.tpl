@@ -3,23 +3,23 @@
 {{block content}}
 {{ assign var="userindex" value=1 }}
 <header>
-	<h3>{{ #setNewPassword# }}</h3>
+	<h3>{{ 'setNewPassword'|translate }}</h3>
 </header>
 <form action="{{ $form->getAction() }}" method="{{ $form->getMethod() }}">
 	<fieldset>
         {{ if $form->isErrors() }}
         <div class="alert alert-error">
-            <p>{{ #couldNotChange# }}</p>
+            <p>{{ 'couldNotChange'|translate }}</p>
         </div>
         {{ /if }}
     </fieldset>
     <fieldset class="fixBackground background-block login">
         <dl>
-                {{ $form->password->setLabel("{{ #newPassword# }}")->removeDecorator('Errors') }}
+                {{ $form->password->setLabel("{{ 'newPassword'|translate }}")->removeDecorator('Errors') }}
                 {{ if $form->password->hasErrors() }}
                 <dt class="info-block">&nbsp;</dt>
                 <dd class="info-block">
-                	<span class="error-info">{{ #enterNewPassword# }}</span>
+                	<span class="error-info">{{ 'enterNewPassword'|translate }}</span>
                 </dd>
                 {{ /if }}
         </dl>
@@ -28,13 +28,13 @@
                 {{ if $form->password_confirm->hasErrors() && !$form->password->hasErrors() }}
                 <dt class="info-block">&nbsp;</dt>
                 <dd class="info-block">
-                	<span class="error-info">{{ #doesNotMatch# }}</span>
+                	<span class="error-info">{{ 'doesNotMatch'|translate }}</span>
                 </dd>
                 {{ /if }}
          </dl>
 
 		<div class="form-buttons right">
-            <input type="submit" id="submit" class="button" value="{{ #savePassword# }}" />
+            <input type="submit" id="submit" class="button" value="{{ 'savePassword'|translate }}" />
         </div>
     </fieldset>
     </form>
