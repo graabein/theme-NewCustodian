@@ -13,7 +13,7 @@
       <div id="maincol" class="eightcol clearfix">
         
 {{ if !($gimme->url->is_valid) }}
-  <h1>{{ #sorryNoFound# }}</h1>
+  <h1>{{ 'sorryNoFound'|translate }}</h1>
 {{ /if }}                        
 
         </div><!-- /#maincol -->
