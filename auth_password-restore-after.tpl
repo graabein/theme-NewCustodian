@@ -3,11 +3,11 @@
 {{block content}}
 {{ assign var="userindex" value=1 }}
 <header>
-	<h3>{{ #userAccount# }}</h3>
+	<h3>{{ 'userAccount'|translate }}</h3>
 </header>
 <div class="alert alert-info">
-    <h5 class="checkHeading">{{ #weSentEmail# }}</h5>
-    <p>{{ #pleaseCheckInbox# }}</p>
+    <h5 class="checkHeading">{{ 'weSentEmail'|translate }}</h5>
+    <p>{{ 'pleaseCheckInbox'|translate }}</p>
 </div>
 
 {{/block}}
